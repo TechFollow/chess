@@ -64,9 +64,6 @@ class None extends Piece
         $tab[3]=$board[$toy][$tox]->color;
         
         
-       //echo"pre". $tab[0];
-        //echo "deux".$tab[1];
-        //echo "piece".$tab[2];
         $chess->board = $board;
         $_SESSION["chessboard"] = $chess;
         return $tab;
