@@ -121,7 +121,6 @@ class ChessBoard
                         default :
                             $this->board[$i][$j] = new None($i, $j, "", FALSE);
                         break;
-                    echo "fin moncul";
                 }
             }
         }

@@ -125,9 +125,6 @@ class Tower extends Piece
         $_SESSION["chessboard"] = $chess;
         return $tab;
     }
-    
-    
-    
 }
 
 ?>

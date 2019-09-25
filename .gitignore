@@ -7,3 +7,4 @@
 *.iml
 out
 gen
+.infra/docker/nginx/default.conf
