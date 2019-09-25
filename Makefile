@@ -43,7 +43,7 @@ dump-autoload: ## Composer dump-autoload
 bash: ## Connexion a un conteneur par defaut php. Renseigner CONTAINER="nom du conteneur" pour ce connecter a un conteneur
 	docker-compose -f docker-compose.yml  exec -u 33:33 $(CONTAINER) bash
 
-setup: acl .env build start vendor ## Tache d'initialisation de l'environnement
+setup: acl .env build start ## Tache d'initialisation de l'environnement
 
 .env.local: .env
 	cp .env .env.local

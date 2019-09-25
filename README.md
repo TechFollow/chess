@@ -2,7 +2,8 @@
 
 L'application est une version très simplifié d'un jeu d'échec où chaque joueur joue tour à tour sur une même page.
 
-Le plateau et les pions sont générés dans un canvas par un script javascript. Ce dernier va, à chaque action sur le plateau, faire des appels au serveur PHP via une requête AJAX qui va retourner la nouvelle composition du plateau après l'action.
+Le plateau et les pions sont générés dans un canvas par un script javascript. Ce dernier va, à chaque action sur le plateau, faire des appels au serveur PHP via une requête AJAX qui renvoi les deplacements possible de la piece selectionnee, puis lors de la selection du mouvement effectuer le mouvement et envoyer les nouvelle coordonnees de la pieces pour mise  a jour.
+
 Le contexte et le déroulé de la partie sont stockées dans la session PHP.
 
 ## Composition du projet
@@ -16,7 +17,7 @@ Initialement, la stack du projet est :
 
 L'objectif est multiple :
 - Il faut migrer le projet sur du Symfony 4
-- Tant qu'à faire, il faut en profiter pour cleaner un peu le code
+- Tant qu'à faire, il faut en profiter pour cleaner et factoriser un peu le code
 - Si possible, y apporter quelques améliorations et des features bien sympas
 - Adapter le script JS et le CSS pour que les appels AJAX et le chargement des images fonctionne
 
@@ -34,7 +35,8 @@ On trouvera de quoi faire tourner l'application PHP ainsi qu'une base de donnée
 Pour le lancer il faut :
 * Installer Docker
 * S'assurer que *make* soit installé
-* À la racine du projet, lancer `$ make setup`
+* À la racine du projet, lancer `$ make setup` 
+* Dans un navigateur ce rendre sur chess.docker.localhost:8666
 
 ## Specifications fonctionnelles
 
