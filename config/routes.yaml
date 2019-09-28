@@ -1,0 +1,12 @@
+home:
+    path: /
+    defaults: { _controller: 'App\Controller\HomeController:index' }
+
+game:
+    path: /jeu
+    controller: App\Controller\HomeController:play
+
+## request AJAX
+update_game:
+    path: /jeu/update
+    controller: App\Controller\ChessController:updateGame
