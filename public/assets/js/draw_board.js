@@ -12,6 +12,12 @@ window.onload = function () {
         alert("impossible de recupere le context canvas");
         return;
     }
+    var urlDictionary = [
+        'enabled_moves',
+        'move'
+    ];
+    var urlIndex = 0;
+
     var i = 0;
     var j = 0;
     var mouseX = 0;
@@ -214,15 +220,17 @@ window.onload = function () {
         if (mx > 7 || my > 7) {
             return;
         }
-        // alert ('avant state');
-        xhr.onreadystatechange = function () { // On gère ici une requête asynchrone
-            if (xhr.readyState == 4 && xhr.status == 200) {
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr);
                 var json = eval('(' + xhr.responseText + ')');
-                //alert ('appel colorcase');
                 colorcase(json);
+                // bitwise operator used as lever
+                urlIndex ^= 1;
             }
         };
-        xhr.open("GET", "/jeu/update?mx=" + mx + "&my=" + my, true);
+
+        xhr.open("GET", "/jeu/" + urlDictionary[urlIndex] + "?mx=" + mx + "&my=" + my, true);
         xhr.send(null);
     }
 
@@ -230,7 +238,7 @@ window.onload = function () {
     var carre = [];
 
     function colorcase(tablo) {
-        // alert ('colorcase');
+        console.log(tablo);
 
         var i = 0;
         if (tablo[tablo.length - 1] >= "A" && tablo[tablo.length - 1] <= "Z") {

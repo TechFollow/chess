@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset=UTF-8">
-        <link rel="stylesheet" href="image/style.css" />
+        <link rel="stylesheet" href="assets/css/style.css" />
         <title>Chess</title>
     </head>
     <body>

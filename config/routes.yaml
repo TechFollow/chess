@@ -7,6 +7,10 @@ game:
     controller: App\Controller\HomeController:play
 
 ## request AJAX
-update_game:
-    path: /jeu/update
-    controller: App\Controller\ChessController:updateGame
+chess_enabled_moves:
+    path: /jeu/enabled_moves
+    controller: App\Controller\ChessController:enabledMoves
+
+chess_move:
+    path: /jeu/move
+    controller: App\Controller\ChessController:move
