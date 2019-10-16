@@ -1,6 +1,6 @@
 server {
     server_name ${NGINX_SERVERNAME};
-    root ${NGINX_ROOTDIR};
+    root ${NGINX_ROOTDIR}/public;
 	index index.php;
 
     location ~ \.php$ {
