@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+{% block title %}
+    Game
+{% endblock %}
+{% block body %}
+        <section>
+            <canvas id="mon_canvas" width="800" height="800" >
+        </canvas>
+        </section>
+    {% block javascripts %}
+        <script src="{{ asset('assets/js/draw_board.js') }}"></script>
+    {% endblock %}
+{% endblock %}
