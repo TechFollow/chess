@@ -38,7 +38,6 @@ class ChessController extends AbstractController
         return new Response($my_encode_array, 200, array('Content-type', 'json'));
     }
 
-
     function move(Request $request): Response
     {
         $x = $request->get('mx');

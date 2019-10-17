@@ -231,7 +231,7 @@ window.onload = function () {
             }
         };
 
-        xhr.open("GET", "/jeu/" + urlDictionary[urlIndex] + "?mx=" + mx + "&my=" + my, true);
+        xhr.open("GET", "/game/" + urlDictionary[urlIndex] + "?mx=" + mx + "&my=" + my, true);
         xhr.send(null);
     }
 
