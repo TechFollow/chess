@@ -43,24 +43,25 @@ class ChessController extends AbstractController
         $test = $this->get('session')->get('chessboard');
         $tab = array();
 
-        if (($player % 2 == 0))
-        {
-            if ($test->board[$y][$x]->type != "-")
-            {
+        if (($player % 2 == 0)) {
+            if ($test->board[$y][$x]->type != "-") {
                 $tab = $test->board[$y][$x]->check($x, $y, $test, $player);
-            }
-            elseif ($test->board[$y][$x]->type == "-" || $test->board[$y][$x]->color == "Black")
-            {
-                for ($i = 0; $i < sizeof($this->get('session')->get('ancient')); $i++)
-                {
-                    if ($i % 2 == 0)
-                    {
-                        if ($this->get('session')->get('ancient')[$i] == $x)
-                        {
-                            if ($this->get('session')->get('ancient')[$i + 1] == $y)
-                            {
-                                $moveResponse = $test->board[$y][$x]->move($this->get('session')->get('ax'), $this->get('session')->get('ay'), $x, $y, $test);
-                                $this->get('session')->set('chessBoard', $moveResponse['chess']);
+            } elseif ($test->board[$y][$x]->type == "-" ||
+                      $test->board[$y][$x]->color == "Black") {
+                for ($i = 0; $i < sizeof($this->get('session')->get('ancient')); $i++) {
+                    if ($i % 2 == 0) {
+                        if ($this->get('session')->get('ancient')[$i] == $x) {
+                            if ($this->get('session')->get('ancient')[$i + 1] == $y) {
+                                $moveResponse = $test->board[$y][$x]
+                                                     ->move(
+                                                         $this->get('session')->get('ax'),
+                                                         $this->get('session')->get('ay'),
+                                                         $x,
+                                                         $y,
+                                                         $test
+                                                     );
+                                $this->get('session')
+                                     ->set('chessBoard', $moveResponse['chess']);
                                 $tab = $moveResponse['tab'];
                                 $player ^= 1;
                                 break;
@@ -73,13 +74,24 @@ class ChessController extends AbstractController
         } elseif (($player % 2 == 1)) {
             if ($test->board[$y][$x]->type != "-") {
                 $tab = $test->board[$y][$x]->check($x, $y, $test, $player);
-            } elseif ($test->board[$y][$x]->type == "-" || $test->board[$y][$x]->color == "White") {
+            } elseif ($test->board[$y][$x]->type == "-" ||
+                      $test->board[$y][$x]->color == "White") {
                 for ($i = 0; $i < sizeof($this->get('session')->get('ancient')); $i++) {
                     if ($i % 2 == 0) {
                         if ($this->get('session')->get('ancient')[$i] == $x) {
                             if ($this->get('session')->get('ancient')[$i + 1] == $y) {
-                                $moveResponse = $test->board[$y][$x]->move($this->get('session')->get('ax'), $this->get('session')->get('ay'), $x, $y, $test);
-                                $this->get('session')->set('chessBoard', $moveResponse['chess']);
+                                $moveResponse = $test->board[$y][$x]
+                                                     ->move(
+                                                         $this->get('session')->get('ax'),
+                                                         $this->get('session')->get('ay'),
+                                                         $x,
+                                                         $y,
+                                                         $test
+                                                     );
+                                $this->get('session')->set(
+                                                        'chessBoard',
+                                                        $moveResponse['chess']
+                                                    );
                                 $tab = $moveResponse['tab'];
                                 $player ^= 1;
                                 break;
@@ -100,9 +112,13 @@ class ChessController extends AbstractController
             $response = new Response('', 400);
         } else {
             $my_encode_array = json_encode($tab);
-            $response = new Response($my_encode_array, 200, array('Content-type', 'json'));
+            $response = new Response(
+                $my_encode_array,
+                200,
+                array('Content-type', 'json')
+            );
         }
 
-        return ($response);
+        return $response;
     }
 }

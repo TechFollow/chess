@@ -42,7 +42,13 @@ class None extends Piece
         
     }
 
-    public function move(int $fromx, int $fromy, int $tox, int $toy, ChessBoard $chess): array
+    public function move(
+                        int $fromx,
+                        int $fromy,
+                        int $tox,
+                        int $toy,
+                        ChessBoard $chess
+                    ): array
     {
         $tab = array (0);
         $board = $chess->board;

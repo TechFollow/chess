@@ -49,121 +49,135 @@ class Pawn extends Piece
         $chessboard = $chess;
         $cpt = 0;
         $array = array (0);
-        if ($player % 2 == 0)
-        {
-            if ($this->first == 0 )
-            {
+        if ($player % 2 == 0) {
+            if ($this->first == 0 ) {
                 $this->first++;
-                if (((($to+1) < 8) && ($from - 1 >= 0)) && $chessboard->board[$to+1][$from-1]->type != "-" && ($chessboard->board[$to + 1][$from - 1]->color != $chessboard->board[$to][$from]->color))
-                {
+                if (((($to+1) < 8) && ($from - 1 >= 0)) &&
+                    $chessboard->board[$to+1][$from-1]->type != "-" &&
+                    ($chessboard->board[$to + 1][$from - 1]->color
+                        !=
+                        $chessboard->board[$to][$from]->color)) {
                 $array[$cpt] = $from - 1;
                 $cpt++;
                     $array[$cpt] = $to + 1;
                     $cpt++;
                 }
-                if (((($to+1) < 8) && ($from < 8)) &&$chessboard->board[$to+1][$from]->type == "-")
-                {
+                if (((($to+1) < 8) && ($from < 8)) &&
+                    $chessboard->board[$to+1][$from]->type == "-") {
                     $array[$cpt] = $from;
                     $cpt++;
                     $array[$cpt] = $to + 1;
                     $cpt++;
                 }
-                if (((($to+1) < 8) && ($to+2 < 8) && ($from < 8)) &&$chessboard->board[$to+2][$from]->type == "-")
-                {
+                if (((($to+1) < 8) && ($to+2 < 8) && ($from < 8)) &&
+                    $chessboard->board[$to+2][$from]->type == "-") {
                     $array[$cpt] = $from;
                     $cpt++;
                     $array[$cpt] = $to + 2;
                     $cpt++;
                 }
-                if (((($to+1) < 8) && ($from + 1 < 8)) && $chessboard->board[$to+1][$from + 1]->type != "-" && ($chessboard->board[$to + 1][$from + 1]->color != $chessboard->board[$to][$from]->color))
-                {
+                if (((($to+1) < 8) && ($from + 1 < 8)) &&
+                        $chessboard->board[$to+1][$from + 1]->type
+                        != "-" &&
+                    ($chessboard->board[$to + 1][$from + 1]->color
+                        !=
+                        $chessboard->board[$to][$from]->color)) {
                     $array[$cpt] = $from + 1;
                     $cpt++;
                     $array[$cpt] = $to + 1;
                     $cpt++;
                 }
 
-            }
-            else
-                {
-                    if (((($to+1) < 8) && ($from - 1 >= 0)) && $chessboard->board[$to+1][$from-1]->type != "-" && ($chessboard->board[$to + 1][$from - 1]->color != $chessboard->board[$to][$from]->color))
-                    {
-                        $array[$cpt] = $from - 1;
-                        $cpt++;
-                        $array[$cpt] = $to + 1;
-                        $cpt++;
-                    }
-                    if (((($to+1) < 8) && ($from< 8)) &&$chessboard->board[$to+1][$from]->type == "-")
-                    {
-                        $array[$cpt] = $from;
-                        $cpt++;
-                        $array[$cpt] = $to + 1;
-                        $cpt++;
-                    }
-                    if (((($to+1) < 8) && ($from + 1 < 8)) && $chessboard->board[$to+1][$from + 1]->type != "-" && ($chessboard->board[$to + 1][$from + 1]->color != $chessboard->board[$to][$from]->color))
-                    {
-                        $array[$cpt] = $from + 1;
-                        $cpt++;
-                        $array[$cpt] = $to + 1;
-                        $cpt++;
-                    }
+            } else {
+                if (((($to+1) < 8) && ($from - 1 >= 0)) &&
+                    $chessboard->board[$to+1][$from-1]->type != "-" &&
+                    ($chessboard->board[$to + 1][$from - 1]->color
+                        !=
+                        $chessboard->board[$to][$from]->color)) {
+                    $array[$cpt] = $from - 1;
+                    $cpt++;
+                    $array[$cpt] = $to + 1;
+                    $cpt++;
                 }
-
-                return ($array);
-        }
-        else
-        {
-            if ($this->first == 0 )
-            {
+                if (((($to+1) < 8) && ($from< 8)) &&
+                    $chessboard->board[$to+1][$from]->type == "-") {
+                    $array[$cpt] = $from;
+                    $cpt++;
+                    $array[$cpt] = $to + 1;
+                    $cpt++;
+                }
+                if (((($to+1) < 8) && ($from + 1 < 8)) &&
+                    $chessboard->board[$to+1][$from + 1]->type != "-" &&
+                    ($chessboard->board[$to + 1][$from + 1]->color
+                        !=
+                        $chessboard->board[$to][$from]->color)) {
+                    $array[$cpt] = $from + 1;
+                    $cpt++;
+                    $array[$cpt] = $to + 1;
+                    $cpt++;
+                }
+            }
+            return $array;
+        } else {
+            if ($this->first == 0 ) {
                 $this->first++;
-                if (((($to-1) >= 0) && ($from - 1 >= 0)) && $chessboard->board[$to-1][$from-1]->type != "-" && ($chessboard->board[$to - 1][$from - 1]->color != $chessboard->board[$to][$from]->color))
-                {
+                if (((($to-1) >= 0) && ($from - 1 >= 0)) &&
+                    $chessboard->board[$to-1][$from-1]->type!= "-" &&
+                    ($chessboard->board[$to - 1][$from - 1]->color
+                        !=
+                        $chessboard->board[$to][$from]->color)) {
                 $array[$cpt] = $from - 1;
                 $cpt++;
                     $array[$cpt] = $to - 1;
                     $cpt++;
                 }
-                if (((($to-1) >= 0) && ($from < 8)) &&$chessboard->board[$to-1][$from]->type == "-")
-                {
+                if (((($to-1) >= 0) && ($from < 8)) &&
+                    $chessboard->board[$to-1][$from]->type == "-") {
                     $array[$cpt] = $from;
                     $cpt++;
                     $array[$cpt] = $to - 1;
                     $cpt++;
                 }
-                if (((($to-1) >= 0) && ($to-2 >= 0) && ($from < 8)) &&$chessboard->board[$to-2][$from]->type == "-")
-                {
+                if (((($to-1) >= 0) && ($to-2 >= 0) && ($from < 8)) &&
+                    $chessboard->board[$to-2][$from]->type == "-") {
                     $array[$cpt] = $from;
                     $cpt++;
                     $array[$cpt] = $to - 2;
                     $cpt++;
                 }
-                if (((($to-1) >= 0) && ($from + 1 < 8)) && $chessboard->board[$to - 1][$from + 1]->type != "-" && ($chessboard->board[$to - 1][$from + 1]->color != $chessboard->board[$to][$from]->color))
-                {
+                if (((($to-1) >= 0) && ($from + 1 < 8)) &&
+                    $chessboard->board[$to - 1][$from + 1]->type != "-" &&
+                    ($chessboard->board[$to - 1][$from + 1]->color
+                        !=
+                        $chessboard->board[$to][$from]->color)) {
                     $array[$cpt] = $from + 1;
                     $cpt++;
                     $array[$cpt] = $to - 1;
                     $cpt++;
                 }
-
-            }
-            else
-                {
-                   if (((($to-1) >= 0) && ($from - 1 >= 0)) && $chessboard->board[$to-1][$from-1]->type != "-" && ($chessboard->board[$to - 1][$from - 1]->color != $chessboard->board[$to][$from]->color))
-                    {
+            } else {
+                   if (((($to-1) >= 0) && ($from - 1 >= 0)) &&
+                       $chessboard->board[$to-1][$from-1]->type != "-" &&
+                       ($chessboard->board[$to - 1][$from - 1]->color
+                           !=
+                           $chessboard->board[$to][$from]->color)) {
                         $array[$cpt] = $from - 1;
                         $cpt++;
                         $array[$cpt] = $to - 1;
                         $cpt++;
                     }
-                    if (((($to-1) >= 0) && ($from < 8)) &&$chessboard->board[$to-1][$from]->type == "-")
-                    {
+                   if (((($to-1) >= 0) && ($from < 8)) &&
+                       $chessboard->board[$to-1][$from]->type == "-") {
                         $array[$cpt] = $from;
                         $cpt++;
                         $array[$cpt] = $to - 1;
                         $cpt++;
                     }
-                    if (((($to-1) >= 0) && ($from + 1 < 8)) && $chessboard->board[$to - 1][$from + 1]->type != "-" && ($chessboard->board[$to - 1][$from + 1]->color != $chessboard->board[$to][$from]->color))
-                    {
+                    if (((($to-1) >= 0) && ($from + 1 < 8)) &&
+                        $chessboard->board[$to - 1][$from + 1]->type != "-" &&
+                        ($chessboard->board[$to - 1][$from + 1]->color
+                            !=
+                            $chessboard->board[$to][$from]->color)) {
                         $array[$cpt] = $from + 1;
                         $cpt++;
                         $array[$cpt] = $to - 1;
@@ -175,7 +189,13 @@ class Pawn extends Piece
         }
     }
 
-    public function move(int $fromx, int $fromy, int $tox, int $toy, ChessBoard $chess): array
+    public function move(
+                        int $fromx,
+                        int $fromy,
+                        int $tox,
+                        int $toy,
+                        ChessBoard $chess
+                    ): array
     {
         $tab = array (0);
         $board = $chess->board;
