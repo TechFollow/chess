@@ -64,28 +64,28 @@ class ChessBoard
                     case 0:
                         switch ($j) {
                             case 0:
-                                $this->board[$i][$j] = new Tower($i, $j, "White", TRUE);
+                                $this->board[$i][$j] = new Tower($i, $j, "White", true);
                                 break;
                             case 1:
-                                $this->board[$i][$j] = new Knight($i, $j, "White", TRUE);
+                                $this->board[$i][$j] = new Knight($i, $j, "White", true);
                                 break;
                             case 2:
-                                $this->board[$i][$j] = new Bishop($i, $j, "White", TRUE);
+                                $this->board[$i][$j] = new Bishop($i, $j, "White", true);
                                 break;
                             case 3:
-                                $this->board[$i][$j] = new Queen($i, $j, "White", TRUE);
+                                $this->board[$i][$j] = new Queen($i, $j, "White", true);
                                 break;
                             case 4:
-                                $this->board[$i][$j] = new King($i, $j, "White", TRUE);
+                                $this->board[$i][$j] = new King($i, $j, "White", true);
                                 break;
                             case 5:
-                                $this->board[$i][$j] = new Bishop($i, $j, "White", TRUE);
+                                $this->board[$i][$j] = new Bishop($i, $j, "White", true);
                                 break;
                             case 6:
-                                $this->board[$i][$j] = new Knight($i, $j, "White", TRUE);
+                                $this->board[$i][$j] = new Knight($i, $j, "White", true);
                                 break;
                             case 7:
-                                $this->board[$i][$j] = new Tower($i, $j, "White", TRUE);
+                                $this->board[$i][$j] = new Tower($i, $j, "White", true);
                                 break;
                         }
                         break;
@@ -93,38 +93,38 @@ class ChessBoard
                         $this->board[$i][$j] = new Pawn ($i, $j, "White", true);
                         break;
                     case 6:
-                        $this->board[$i][$j] = new Pawn($i, $j, "Black", TRUE);
+                        $this->board[$i][$j] = new Pawn($i, $j, "Black", true);
                         break;
                     case 7:
                         switch ($j) {
                             case 0:
-                                $this->board[$i][$j] = new Tower($i, $j, "Black", TRUE);
+                                $this->board[$i][$j] = new Tower($i, $j, "Black", true);
                                 break;
                             case 1:
-                                $this->board[$i][$j] = new Knight($i, $j, "Black", TRUE);
+                                $this->board[$i][$j] = new Knight($i, $j, "Black", true);
                                 break;
                             case 2:
-                                $this->board[$i][$j] = new Bishop($i, $j, "Black", TRUE);
+                                $this->board[$i][$j] = new Bishop($i, $j, "Black", true);
                                 break;
                             case 3:
-                                $this->board[$i][$j] = new Queen($i, $j, "Black", TRUE);
+                                $this->board[$i][$j] = new Queen($i, $j, "Black", true);
                                 break;
                             case 4:
-                                $this->board[$i][$j] = new King($i, $j, "Black", TRUE);
+                                $this->board[$i][$j] = new King($i, $j, "Black", true);
                                 break;
                             case 5:
-                                $this->board[$i][$j] = new Bishop($i, $j, "Black", TRUE);
+                                $this->board[$i][$j] = new Bishop($i, $j, "Black", true);
                                 break;
                             case 6:
-                                $this->board[$i][$j] = new Knight($i, $j, "Black", TRUE);
+                                $this->board[$i][$j] = new Knight($i, $j, "Black", true);
                                 break;
                             case 7:
-                                $this->board[$i][$j] = new Tower($i, $j, "Black", TRUE);
+                                $this->board[$i][$j] = new Tower($i, $j, "Black", true);
                                 break;
                         }
 			break;
                         default :
-                            $this->board[$i][$j] = new None($i, $j, "", FALSE);
+                            $this->board[$i][$j] = new None($i, $j, "", false);
                         break;
                 }
             }

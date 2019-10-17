@@ -55,7 +55,7 @@ class None extends Piece
         $tab = array (0);
         $board = $chess->board;
         $board[$toy][$tox] = $chess->board[$fromy][$fromx];
-        $board[$fromy][$fromx] = new None($fromx, $fromy, "", FALSE);
+        $board[$fromy][$fromx] = new None($fromx, $fromy, "", false);
         
         $tab[0]=$tox;
         $tab[1]=$toy;

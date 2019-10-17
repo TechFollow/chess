@@ -23,7 +23,7 @@ class Tower extends Piece
         $this->color = $color;
         $this->alive = $alive;
         $this->type = "T";
-        $this->has_moved = FALSE;
+        $this->has_moved = false;
     }
     
     //getter setter
@@ -119,7 +119,7 @@ class Tower extends Piece
         $tab = array (0);
         $board = $chess->board;
         $board[$toy][$tox] = $chess->board[$fromy][$fromx];
-        $board[$fromy][$fromx] = new None($fromy, $fromx, "", FALSE);
+        $board[$fromy][$fromx] = new None($fromy, $fromx, "", false);
         
         $tab[0]=$tox;
         $tab[1]=$toy;
