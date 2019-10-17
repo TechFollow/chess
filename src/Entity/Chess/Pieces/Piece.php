@@ -7,8 +7,8 @@ use App\Entity\Chess\ChessBoard;
 abstract class Piece
 {
     protected $color;
-    protected $pos_x;
-    protected $pos_y;
+    protected $posX;
+    protected $posY;
     protected $alive;
     protected $type;
 

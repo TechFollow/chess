@@ -11,8 +11,8 @@ class Pawn extends Piece
     
     public function __construct($x, $y, $color, $alive) 
     {
-        $this->pos_x = $y;
-        $this->pos_y = $x;
+        $this->posX = $y;
+        $this->posY = $x;
         $this->color = $color;
         $this->alive = $alive;
         $this->first = 0;

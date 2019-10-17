@@ -7,15 +7,15 @@ use App\Entity\Chess\Pieces\Piece;
 
 class Tower extends Piece 
 {
-    private $has_moved;
+    private $hasMoved;
     public function __construct($x, $y, $color, $alive) 
     {
-        $this->pos_x = $y;
-        $this->pos_y = $x;
+        $this->posX = $y;
+        $this->posY = $x;
         $this->color = $color;
         $this->alive = $alive;
         $this->type = "T";
-        $this->has_moved = false;
+        $this->hasMoved = false;
     }
     
     //getter setter

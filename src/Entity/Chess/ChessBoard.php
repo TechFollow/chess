@@ -24,7 +24,7 @@ class ChessBoard
     private $board;
     private $length = 8;
     private $height = 8;
-    private $correspondance;
+    private $correspondence;
 
    //getter setter
    public function __get($name)
@@ -40,14 +40,14 @@ class ChessBoard
   //constructor
     public function  __construct()
     {
-         $this->correspondance["a"] = 0;
-         $this->correspondance["b"] = 1;
-         $this->correspondance["c"] = 2;
-         $this->correspondance["d"] = 3;
-         $this->correspondance["e"] = 4; 
-         $this->correspondance["f"] = 5;
-         $this->correspondance["g"] = 6;
-         $this->correspondance["h"] = 7;
+         $this->correspondence["a"] = 0;
+         $this->correspondence["b"] = 1;
+         $this->correspondence["c"] = 2;
+         $this->correspondence["d"] = 3;
+         $this->correspondence["e"] = 4;
+         $this->correspondence["f"] = 5;
+         $this->correspondence["g"] = 6;
+         $this->correspondence["h"] = 7;
             
         for ($i = 0; $i < $this->height; $i++) {
             for ($j = 0; $j < $this->length; $j++) {
@@ -124,8 +124,8 @@ class ChessBoard
     
     public function isValid ($from, $to)
     {
-        if ($this->board[$this->correspondance[$from[0]]][$from[1]] != "-") {
-            if ($this->board[$this->correspondance[$from[0]]][$from[1]]->check ($to) == true) {
+        if ($this->board[$this->correspondence[$from[0]]][$from[1]] != "-") {
+            if ($this->board[$this->correspondence[$from[0]]][$from[1]]->check ($to) == true) {
                 return true;
             } else {
                 return false;
