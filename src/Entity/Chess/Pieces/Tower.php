@@ -3,11 +3,11 @@
 namespace App\Entity\Chess\Pieces;
 
 use App\Entity\Chess\ChessBoard;
-use App\Entity\Chess\Pieces\Piece;
 
-class Tower extends Piece 
+class Tower extends Piece
 {
     private $hasMoved;
+
     public function __construct($x, $y, $color, $alive) 
     {
         $this->posX = $y;
