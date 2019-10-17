@@ -225,24 +225,4 @@ class ChessBoard
         return false;
     }
 
-
-    public function display()
-    {
-        for ($i = 0; $i < $this->height; $i++) {
-            echo "|" ;
-            for ($j = 0; $j < $this->length; $j++) {
-                echo $this->board[$i][$j]->display()."|";
-            }
-            echo "<br/>";
-        }
-    }
-
-    public static function getInstance ()
-    {
-        if (isset (self::$instance)) {
-            return (self::$instance);
-        }
-
-        return new ChessBoard ();
-    }
 }

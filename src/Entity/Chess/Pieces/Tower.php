@@ -40,7 +40,7 @@ class Tower extends Piece
 
     public function check(int $from,int $to, ChessBoard $chess, $player = null)
     {
-        $board = $chess;
+        $board = $chess->__get(('board'));
         $cpt = 0;
         $px = $from;
         $py = $to;

@@ -18,7 +18,11 @@ class ChessController extends AbstractController
 
         if ($test->board[$y][$x]->type == "-") {
             // 400 status because selected square is not a player piece
-            return new Response('', '400');
+            return new Response(
+                json_encode('400'),
+                '200',
+                array('Content-type', 'json')
+            );
         }
 
         $tab = $test->board[$y][$x]->check($x, $y, $test, $player);
@@ -109,7 +113,7 @@ class ChessController extends AbstractController
         $this->get('session')->set('ay', $y);
 
         if (0 == count($tab)) {
-            $response = new Response('', 400);
+            $response = new Response(json_encode(null), 200);
         } else {
             $my_encode_array = json_encode($tab);
             $response = new Response(

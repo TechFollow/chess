@@ -11,7 +11,7 @@ class HomeController extends AbstractController
 {
     public function index(): Response
     {
-        return $this->render('chess/home/index.php', ['']);
+        return $this->render('chess/home/index.html.twig', ['']);
     }
 
     public function play(): Response
@@ -22,6 +22,6 @@ class HomeController extends AbstractController
         $this->get('session')->set('player', $player);
         $this->get('session')->set('chessboard', $chessBoard);
 
-        return $this->render('chess/game/jeu.php', []);
+        return $this->render('chess/game/index.html.twig', []);
     }
 }

@@ -222,9 +222,10 @@ window.onload = function () {
         }
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                console.log(xhr);
                 var json = eval('(' + xhr.responseText + ')');
-                colorcase(json);
+                if (json != null) {
+                    colorcase(json);
+                }
                 // bitwise operator used as lever
                 urlIndex ^= 1;
             }
@@ -238,7 +239,6 @@ window.onload = function () {
     var carre = [];
 
     function colorcase(tablo) {
-        console.log(tablo);
 
         var i = 0;
         if (tablo[tablo.length - 1] >= "A" && tablo[tablo.length - 1] <= "Z") {
