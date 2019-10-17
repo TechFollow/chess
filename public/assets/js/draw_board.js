@@ -2,14 +2,14 @@ window.onload = function () {
     var canvas = document.getElementById('mon_canvas');
 
     if (!canvas) {
-        alert("impossible de recuperer le canvas");
+        alert("impossible to load canvas");
         return;
     }
 
     var context = canvas.getContext('2d');
 
     if (!context) {
-        alert("impossible de recupere le context canvas");
+        alert("impossible to get canvas context");
         return;
     }
     var urlDictionary = [
