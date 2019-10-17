@@ -41,17 +41,18 @@ class Bishop extends Piece
     
     
     
-    public function eat ()
+    public function eat()
     {
         
     }
     
     public function display()
     {
-        if ($this->color == "White")
+        if ($this->color == "White") {
             echo "Bw";
-        else 
+        } else {
             echo "Bb";
+        }
     }
 
     public function check(int $from, int $to, ChessBoard $chess, $player = null)
@@ -61,12 +62,9 @@ class Bishop extends Piece
         $cpt = 0;
         
         $tabres = array(0);
-        if (($py + 1 < 8) )
-        {
-            if ($px + 1 < 8)
-            {
-                while (($px + 1 < 8)&&($py + 1 < 8) && ($chess->board[$py + 1][$px + 1]->type == "-"))
-                {
+        if (($py + 1 < 8) ) {
+            if ($px + 1 < 8) {
+                while (($px + 1 < 8)&&($py + 1 < 8) && ($chess->board[$py + 1][$px + 1]->type == "-")) {
                     $px++;
                     $py++;
                     $tabres[$cpt] = $px;
@@ -79,12 +77,9 @@ class Bishop extends Piece
         
         $px = $from;
         $py = $to;
-        if (($py + 1 > 8))
-        {
-            if ($px - 1 >= 0)
-            {
-                while (($px - 1 >= 0)&&($py  + 1 < 8) && ($chess->board[$py + 1][$px - 1]->type == "-"))
-                {
+        if (($py + 1 > 8)) {
+            if ($px - 1 >= 0) {
+                while (($px - 1 >= 0)&&($py  + 1 < 8) && ($chess->board[$py + 1][$px - 1]->type == "-")) {
                     $px--;
                     $py++;
                     $tabres[$cpt] = $px;
@@ -98,11 +93,8 @@ class Bishop extends Piece
         $px = $from;
         $py = $to;
         
-        if (($px - 1 >= 0))
-        {
-            if ($py - 1 >= 0)
-        
-            {
+        if (($px - 1 >= 0)) {
+            if ($py - 1 >= 0) {
                 while (($px - 1 >= 0)&&($py - 1 >= 0) && ($chess->board[$py - 1][$px - 1]->type == "-"))
                 {
                     $px--;
@@ -117,12 +109,9 @@ class Bishop extends Piece
         
         $px = $from;
         $py = $to;
-        if ($px + 1 < 8)
-        {
-           if ($py - 1 >= 0) 
-           {
-                while (($px + 1 < 8)&&($py - 1 >= 0) && ($chess->board[$py - 1][$px + 1]->type == "-"))
-                {
+        if ($px + 1 < 8) {
+           if ($py - 1 >= 0) {
+                while (($px + 1 < 8)&&($py - 1 >= 0) && ($chess->board[$py - 1][$px + 1]->type == "-")) {
                     $px++;
                     $py--;
                     $tabres[$cpt] = $px;
@@ -134,7 +123,6 @@ class Bishop extends Piece
         }
        
         return $tabres;
-        
     }
 
     public function move(int $fromx, int $fromy, int $tox, int $toy, ChessBoard $chess): array
@@ -157,5 +145,3 @@ class Bishop extends Piece
         return $response;
     }
 }
-
-?>

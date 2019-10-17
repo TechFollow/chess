@@ -1,3 +1,4 @@
+
 server {
     server_name ${NGINX_SERVERNAME};
     root ${NGINX_ROOTDIR}/public;

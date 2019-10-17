@@ -8,6 +8,7 @@ namespace App\Entity\Chess\Pieces;
 
 use App\Entity\Chess\ChessBoard;
 use App\Entity\Chess\Pieces\Piece as Piece;
+
 /**
  * Description of King
  *
@@ -61,67 +62,55 @@ class King extends Piece
         $py = $to;
         $tabres = array(0);
         
-        if ($px + 1 < 8)
-        {
+        if ($px + 1 < 8) {
             $tabres[$cpt] = $px + 1;
             $cpt++;
             $tabres[$cpt] = $py;
             $cpt++;
         }
-        if ($px - 1 >= 0)
-        {
+        if ($px - 1 >= 0) {
             $tabres[$cpt] = $px - 1;
             $cpt++;
             $tabres[$cpt] = $py;
             $cpt++;
         }
-        
-        if ($py + 1 < 8)
-        {
+        if ($py + 1 < 8) {
             $tabres[$cpt] = $px;
             $cpt++;
             $tabres[$cpt] = $py + 1;
             $cpt++;
         }
-        if ($px - 1 >= 0)
-        {
+        if ($px - 1 >= 0) {
             $tabres[$cpt] = $px;
             $cpt++;
             $tabres[$cpt] = $py - 1;
             $cpt++;
         }
-            
-        if ($px + 1 < 8 && $py + 1 < 8)
-        {
+        if ($px + 1 < 8 && $py + 1 < 8) {
             $tabres[$cpt] = $px + 1;
             $cpt++;
             $tabres[$cpt] = $py + 1;
             $cpt++;
         }
-        
-        if ($px - 1 < 8 && $py + 1 < 8)
-        {
+        if ($px - 1 < 8 && $py + 1 < 8) {
             $tabres[$cpt] = $px - 1;
             $cpt++;
             $tabres[$cpt] = $py + 1;
             $cpt++;
         }
-        
-        if ($px - 1 < 8 && $py - 1 < 8)
-        {
+        if ($px - 1 < 8 && $py - 1 < 8) {
             $tabres[$cpt] = $px - 1;
             $cpt++;
             $tabres[$cpt] = $py - 1;
             $cpt++;
         }
-        
-        if ($px + 1 < 8 && $py - 1 < 8)
-        {
+        if ($px + 1 < 8 && $py - 1 < 8) {
             $tabres[$cpt] = $px + 1;
             $cpt++;
             $tabres[$cpt] = $py - 1;
             $cpt++;
         }
+
         return $tabres; 
     }
 
@@ -130,5 +119,3 @@ class King extends Piece
         return [];
     }
 }
-
-?>

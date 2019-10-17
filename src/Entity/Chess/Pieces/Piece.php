@@ -28,4 +28,3 @@ abstract class Piece
     
     abstract public function display ();
 }
-?>

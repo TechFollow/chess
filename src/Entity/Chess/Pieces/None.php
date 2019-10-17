@@ -35,9 +35,7 @@ class None extends Piece
     {
         $this->$name = $value;
     }
-    
-    
-    
+
     public function eat ()
     {
         
@@ -75,5 +73,3 @@ class None extends Piece
         return $response;
     }
 }
-
-?>

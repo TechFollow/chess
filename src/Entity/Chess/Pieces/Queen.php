@@ -203,5 +203,3 @@ class Queen extends Piece
         return $response;
     }
 }
-
-?>

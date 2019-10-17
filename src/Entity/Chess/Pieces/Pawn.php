@@ -204,5 +204,3 @@ class Pawn extends Piece
         return $response;
     }
 }
-
-?>

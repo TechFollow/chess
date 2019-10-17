@@ -134,5 +134,3 @@ class Tower extends Piece
         return $response;
     }
 }
-
-?>

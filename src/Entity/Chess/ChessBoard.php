@@ -58,16 +58,11 @@ class ChessBoard
          $this->correspondance["g"] = 6;
          $this->correspondance["h"] = 7;
             
-        for ($i = 0; $i < $this->height; $i++)
-        {
-           
-            for ($j = 0; $j < $this->length; $j++)
-            {
-                switch ($i)
-                {
+        for ($i = 0; $i < $this->height; $i++) {
+            for ($j = 0; $j < $this->length; $j++) {
+                switch ($i) {
                     case 0:
-                        switch ($j)
-                        {
+                        switch ($j) {
                             case 0:
                                 $this->board[$i][$j] = new Tower($i, $j, "White", TRUE);
                                 break;
@@ -101,8 +96,7 @@ class ChessBoard
                         $this->board[$i][$j] = new Pawn($i, $j, "Black", TRUE);
                         break;
                     case 7:
-                        switch ($j)
-                        {
+                        switch ($j) {
                             case 0:
                                 $this->board[$i][$j] = new Tower($i, $j, "Black", TRUE);
                                 break;
@@ -139,14 +133,12 @@ class ChessBoard
     
     public function is_valid ($from, $to)
     {
-        if ($this->board[$this->correspondance[$from[0]]][$from[1]] != "-")
-        {
-            if ($this->board[$this->correspondance[$from[0]]][$from[1]]->check ($to) == true)
-            {
+        if ($this->board[$this->correspondance[$from[0]]][$from[1]] != "-") {
+            if ($this->board[$this->correspondance[$from[0]]][$from[1]]->check ($to) == true) {
                 return true;
-            }
-            else
+            } else {
                 return false;
+            }
         }
         return false;
     }
@@ -154,11 +146,9 @@ class ChessBoard
     
     public function display ()
     {
-        for ($i = 0; $i < $this->height; $i++)
-        {
+        for ($i = 0; $i < $this->height; $i++) {
             echo "|" ;
-            for ($j = 0; $j < $this->length; $j++)
-            {
+            for ($j = 0; $j < $this->length; $j++) {
                 echo $this->board[$i][$j]->display()."|";
             }
             echo "<br/>";
@@ -167,11 +157,9 @@ class ChessBoard
 
     public static function get_instance ()
     {
-        if (isset (self::$instance))
-        {
+        if (isset (self::$instance)) {
             return (self::$instance);
         }
         return new ChessBoard ();
     }
 }
-?>
