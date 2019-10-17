@@ -1,12 +1,8 @@
 <?php
-/**
- * Description of Pieces
- *
- * @author durand_y
- */
+
 namespace App\Entity\Chess\Pieces;
 
- use App\Entity\Chess\ChessBoard;
+use App\Entity\Chess\ChessBoard;
 
 abstract class Piece
 {

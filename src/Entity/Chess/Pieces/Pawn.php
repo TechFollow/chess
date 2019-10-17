@@ -1,18 +1,10 @@
 <?php
-//session_start();
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 namespace App\Entity\Chess\Pieces;
 
 use App\Entity\Chess\ChessBoard;
 use App\Entity\Chess\Pieces\Piece as Piece;
-/**
- * Description of Pawn
- *
- * @author durand_y
- */
+
 class Pawn extends Piece 
 {
     private $first;

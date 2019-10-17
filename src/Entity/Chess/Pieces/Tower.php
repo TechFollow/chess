@@ -1,18 +1,10 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 namespace App\Entity\Chess\Pieces;
 
 use App\Entity\Chess\ChessBoard;
 use App\Entity\Chess\Pieces\Piece;
-/**
- * Description of Tower
- *
- * @author durand_y
- */
+
 class Tower extends Piece 
 {
     private $has_moved;

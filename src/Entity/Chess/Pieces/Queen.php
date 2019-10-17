@@ -4,11 +4,7 @@ namespace App\Entity\Chess\Pieces;
 
 use App\Entity\Chess\ChessBoard;
 use App\Entity\Chess\Pieces\Piece as Piece;
-/**
- * Description of Queen
- *
- * @author durand_y
- */
+
 class Queen extends Piece
 {
     public function __construct($x, $y, $color, $alive) 

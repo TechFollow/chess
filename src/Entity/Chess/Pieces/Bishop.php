@@ -1,16 +1,5 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/**
- * Description of Bishop
- *
- * @author durand_y
- */
-
 namespace App\Entity\Chess\Pieces;
 
 use App\Entity\Chess\ChessBoard;

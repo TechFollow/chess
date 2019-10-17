@@ -16,8 +16,8 @@ use App\Entity\Chess\Pieces\Knight;
 use App\Entity\Chess\Pieces\Pawn;
 
 error_reporting (E_ALL);
+//#TODO: side effect
 ini_set ("display_errors", 1);
-
 class ChessBoard
 {
     //attributs
