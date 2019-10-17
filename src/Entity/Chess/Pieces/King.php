@@ -33,7 +33,7 @@ class King extends Piece
      
     
     
-    public function eat ()
+    public function eat()
     {
         
     }

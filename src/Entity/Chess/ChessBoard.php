@@ -20,23 +20,14 @@ error_reporting (E_ALL);
 ini_set ("display_errors", 1);
 class ChessBoard
 {
-    //attributs
     private $instance;
     private $board;
     private $length = 8;
     private $height = 8;
     private $correspondance;
-    
-    //auto-load 
-    
-   
-    function __autoload($class_name) 
-            {
-               include $class_name . '.php';
-            }
 
    //getter setter
-   public function __get($name) 
+   public function __get($name)
    {
        return $this->$name;
    }
@@ -131,7 +122,7 @@ class ChessBoard
         }
     }
     
-    public function is_valid ($from, $to)
+    public function isValid ($from, $to)
     {
         if ($this->board[$this->correspondance[$from[0]]][$from[1]] != "-") {
             if ($this->board[$this->correspondance[$from[0]]][$from[1]]->check ($to) == true) {
@@ -144,7 +135,7 @@ class ChessBoard
     }
     
     
-    public function display ()
+    public function display()
     {
         for ($i = 0; $i < $this->height; $i++) {
             echo "|" ;
@@ -155,7 +146,7 @@ class ChessBoard
         }
     }
 
-    public static function get_instance ()
+    public static function getInstance ()
     {
         if (isset (self::$instance)) {
             return (self::$instance);
