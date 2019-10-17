@@ -30,12 +30,6 @@ class Tower extends Piece
         $this->$name = $value;
     }
     
-    
-    public function eat ()
-    {
-        
-    }
-    
     public function display()
     {
         if ($this->color == "White")

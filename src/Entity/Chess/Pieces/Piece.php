@@ -24,7 +24,7 @@ abstract class Piece
                                 ChessBoard $chess
                             );
     abstract public function check (int $from,int $to, ChessBoard $chess, $player = null);
-    abstract public function eat ();
+    public function eat() {}
     
     //display the piece
     

@@ -30,11 +30,6 @@ class Pawn extends Piece
     {
         $this->$name = $value;
     }
-
-    public function eat ()
-    {
-        
-    }
     
     public function display()
     {
