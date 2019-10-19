@@ -21,6 +21,7 @@ class HomeController extends AbstractController
 
         $this->get('session')->set('player', $player);
         $this->get('session')->set('chessboard', $chessBoard);
+        $this->get('session')->set('ancient', array());
 
         return $this->render('/game/index.html.twig', []);
     }

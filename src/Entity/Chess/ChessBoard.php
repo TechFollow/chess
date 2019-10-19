@@ -225,4 +225,9 @@ class ChessBoard
         return false;
     }
 
+    public function getBoard(): array
+    {
+        return $this->board;
+    }
+
 }
