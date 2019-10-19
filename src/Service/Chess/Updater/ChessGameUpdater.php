@@ -11,8 +11,8 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class ChessGameUpdater
 {
-    private $movePossibility;
-    private $responseBuilder;
+    protected $movePossibility;
+    protected $responseBuilder;
 
     public function __construct(ResponseBuilder $responseBuilder,
                                 MovePossibility $movePossibility)

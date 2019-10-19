@@ -23,7 +23,11 @@ services:
         resource: '../src/Controller'
         tags: ['controller.service_arguments']
 
-    chess_game_updater:
-        class: 'Service\Chess\Updater\ChessGameUpdater'
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Service\Chess\Updater\ChessGameUpdater:
+        public: true
+        arguments:
+            $movePossibility: '@App\Service\Chess\Updater\MovePossibility'
+            $responseBuilder: '@App\Service\Chess\Updater\ResponseBuilder'
