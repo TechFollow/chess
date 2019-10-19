@@ -1,0 +1,16 @@
+home:
+    path: /
+    defaults: { _controller: 'App\Controller\HomeController:index' }
+
+game:
+    path: /game
+    controller: App\Controller\HomeController:play
+
+## AJAX
+chess_enabled_moves:
+    path: /game/enabled_moves
+    controller: App\Controller\ChessController:enabledMoves
+
+chess_move:
+    path: /game/move
+    controller: App\Controller\ChessController:move
